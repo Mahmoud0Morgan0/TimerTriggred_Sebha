@@ -21,10 +21,12 @@
 /**********************************************************************
 * Module Variable Definitions
 **********************************************************************/
-SSD_Config_t SSDConfig[numOfSSD] =
+const SSD_Config_t SSDConfig[numOfSSD] =
 {
-		{0,PORTC_ID,SSD_1,PORTA_ID,_PIN2},
-		{1,PORTC_ID,SSD_1,PORTA_ID,_PIN3}
+		{0,PORTC_ID,SSD_0,PORTA_ID,_PIN2},
+		{1,PORTC_ID,SSD_0,PORTA_ID,_PIN3},
+		{2,PORTC_ID,SSD_0,PORTA_ID,_PIN4},
+		{3,PORTC_ID,SSD_0,PORTA_ID,_PIN5}
 };
 /**********************************************************************
 * Function Prototypes

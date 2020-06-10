@@ -26,7 +26,7 @@
 /**
  * Defines the number of pins the user want to use "configrable".
 */
-#define NUMBER_OF_CHANNELS_USED 10U
+#define NUMBER_OF_CHANNELS_USED 14U
 /**********************************************************************
 * Typedefs
 **********************************************************************/

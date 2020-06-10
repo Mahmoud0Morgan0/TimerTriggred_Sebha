@@ -43,15 +43,15 @@ void CNT_update()
 	}
 	CNT_period_counter=0;
 	PB_getButtonState(PB_RESET,&state);
-	if(state==PB_PRESSED)
+	if(state==PB_PREPRESSED)
 	{
 		CNT_counter=0;
 	}
 	PB_getButtonState(PB_COUNTER,&state);
-	if(state==PB_PRESSED)
+	if(state==PB_PREPRESSED)
 	{
 		CNT_counter++;
-		if(CNT_counter==100)
+		if(CNT_counter==10000)
 		{
 			CNT_counter=0;
 		}

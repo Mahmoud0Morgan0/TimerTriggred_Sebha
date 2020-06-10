@@ -12,7 +12,7 @@ c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
 Allocating common symbols
 Common symbol       size              file
 
-SSDs                0xc               ./ECAL/SSD.o
+SSDs                0x18              ./ECAL/SSD.o
 buttons             0xc               ./ECAL/PushButton.o
 ISR_FUNCTIONS       0x34              ./System/interruptHandler.o
 Tick                0x2               ./HAL/os.o
@@ -138,7 +138,7 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x9dc
+.text           0x00000000      0xa32
  *(.vectors)
  .vectors       0x00000000       0x54 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm16.o
                 0x00000000                __vectors
@@ -270,86 +270,88 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
                 0x00000382       0x34 ./HAL/dio.o
                 0x00000382                Dio_ChannelToggle
  .text.OS_countPeriod
-                0x000003b6       0x38 ./HAL/os.o
+                0x000003b6       0x2a ./HAL/os.o
                 0x000003b6                OS_countPeriod
  .text.OS_schedule
-                0x000003ee       0x1e ./HAL/os.o
-                0x000003ee                OS_schedule
- .text.OS_init  0x0000040c       0x32 ./HAL/os.o
-                0x0000040c                OS_init
+                0x000003e0       0x1e ./HAL/os.o
+                0x000003e0                OS_schedule
+ .text.OS_init  0x000003fe       0x32 ./HAL/os.o
+                0x000003fe                OS_init
  .text.TMR0_Init
-                0x0000043e       0xec ./HAL/timer0.o
-                0x0000043e                TMR0_Init
+                0x00000430       0xec ./HAL/timer0.o
+                0x00000430                TMR0_Init
  .text.TMR0_update
-                0x0000052a        0x2 ./HAL/timer0.o
-                0x0000052a                TMR0_update
- .text.loadOCR  0x0000052c        0xe ./HAL/timer0.o
-                0x0000052c                loadOCR
- .text.PB_init  0x0000053a       0x52 ./ECAL/PushButton.o
-                0x0000053a                PB_init
+                0x0000051c        0x2 ./HAL/timer0.o
+                0x0000051c                TMR0_update
+ .text.loadOCR  0x0000051e        0xe ./HAL/timer0.o
+                0x0000051e                loadOCR
+ .text.PB_init  0x0000052c       0x52 ./ECAL/PushButton.o
+                0x0000052c                PB_init
  .text.PB_getButtonState
-                0x0000058c       0x26 ./ECAL/PushButton.o
-                0x0000058c                PB_getButtonState
+                0x0000057e       0x26 ./ECAL/PushButton.o
+                0x0000057e                PB_getButtonState
  .text.PB_update
-                0x000005b2       0xb6 ./ECAL/PushButton.o
-                0x000005b2                PB_update
+                0x000005a4       0xb6 ./ECAL/PushButton.o
+                0x000005a4                PB_update
  .text.SSD_init
-                0x00000668       0x6a ./ECAL/SSD.o
-                0x00000668                SSD_init
- .text.SSD_getSymbol
-                0x000006d2       0x62 ./ECAL/SSD.o
-                0x000006d2                SSD_getSymbol
+                0x0000065a       0x6a ./ECAL/SSD.o
+                0x0000065a                SSD_init
  .text.SSD_setSymbol
-                0x00000734       0x50 ./ECAL/SSD.o
-                0x00000734                SSD_setSymbol
+                0x000006c4       0x2a ./ECAL/SSD.o
+                0x000006c4                SSD_setSymbol
+ .text.SSD_getSymbol
+                0x000006ee       0x26 ./ECAL/SSD.o
+                0x000006ee                SSD_getSymbol
  .text.SSD_getState
-                0x00000784       0x5e ./ECAL/SSD.o
-                0x00000784                SSD_getState
+                0x00000714       0x5e ./ECAL/SSD.o
+                0x00000714                SSD_getState
  .text.SSD_setState
-                0x000007e2       0x48 ./ECAL/SSD.o
-                0x000007e2                SSD_setState
+                0x00000772       0x48 ./ECAL/SSD.o
+                0x00000772                SSD_setState
+ .text.SSD_out  0x000007ba       0x6e ./ECAL/SSD.o
+                0x000007ba                SSD_out
  .text.SSD_update
-                0x0000082a       0x40 ./ECAL/SSD.o
-                0x0000082a                SSD_update
+                0x00000828       0x4c ./ECAL/SSD.o
+                0x00000828                SSD_update
  .text.PB_ConfigGet
-                0x0000086a        0x6 ./Config/PB_cfg.o
-                0x0000086a                PB_ConfigGet
+                0x00000874        0x6 ./Config/PB_cfg.o
+                0x00000874                PB_ConfigGet
  .text.SSD_ConfigGet
-                0x00000870        0x6 ./Config/SSD_cfg.o
-                0x00000870                SSD_ConfigGet
+                0x0000087a        0x6 ./Config/SSD_cfg.o
+                0x0000087a                SSD_ConfigGet
  .text.Dio_ConfigGet
-                0x00000876        0x6 ./Config/dio_cfg.o
-                0x00000876                Dio_ConfigGet
+                0x00000880        0x6 ./Config/dio_cfg.o
+                0x00000880                Dio_ConfigGet
  .text.Tmr0_ConfigGet
-                0x0000087c        0x6 ./Config/tmr0_cfg.o
-                0x0000087c                Tmr0_ConfigGet
+                0x00000886        0x6 ./Config/tmr0_cfg.o
+                0x00000886                Tmr0_ConfigGet
  .text.CNT_init
-                0x00000882        0xa ./APP/counter.o
-                0x00000882                CNT_init
- .text.CNT_getCounter
                 0x0000088c        0xa ./APP/counter.o
-                0x0000088c                CNT_getCounter
+                0x0000088c                CNT_init
+ .text.CNT_getCounter
+                0x00000896        0xa ./APP/counter.o
+                0x00000896                CNT_getCounter
  .text.CNT_update
-                0x00000896       0x70 ./APP/counter.o
-                0x00000896                CNT_update
+                0x000008a0       0x70 ./APP/counter.o
+                0x000008a0                CNT_update
  .text.DISP_update
-                0x00000906       0x52 ./APP/display.o
-                0x00000906                DISP_update
+                0x00000910       0x9e ./APP/display.o
+                0x00000910                DISP_update
  .text.Disp_init
-                0x00000958       0x22 ./APP/display.o
-                0x00000958                Disp_init
- .text.main     0x0000097a       0x36 ./main.o
-                0x0000097a                main
- .text.libgcc   0x000009b0       0x28 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodhi4.o)
-                0x000009b0                __udivmodhi4
- .text.libgcc   0x000009d8        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x000009d8        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x000009d8        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
-                0x000009d8                . = ALIGN (0x2)
+                0x000009ae       0x22 ./APP/display.o
+                0x000009ae                Disp_init
+ .text.main     0x000009d0       0x36 ./main.o
+                0x000009d0                main
+ .text.libgcc   0x00000a06       0x28 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000a06                __udivmodhi4
+ .text.libgcc   0x00000a2e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000a2e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000a2e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+                0x00000a2e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000009d8        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
-                0x000009d8                exit
-                0x000009d8                _exit
+ .fini9         0x00000a2e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+                0x00000a2e                exit
+                0x00000a2e                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -368,11 +370,11 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000009d8        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000a2e        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000009dc                _etext = .
+                0x00000a32                _etext = .
 
-.data           0x00800060       0x74 load address 0x000009dc
+.data           0x00800060       0x92 load address 0x00000a32
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm16.o
@@ -406,84 +408,84 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  .data.buttonsConfig
                 0x0080006c        0xc ./Config/PB_cfg.o
                 0x0080006c                buttonsConfig
- .data.SSDConfig
-                0x00800078        0xc ./Config/SSD_cfg.o
-                0x00800078                SSDConfig
  .data.tmr0Config
-                0x00800084        0x3 ./Config/tmr0_cfg.o
-                0x00800084                tmr0Config
+                0x00800078        0x3 ./Config/tmr0_cfg.o
+                0x00800078                tmr0Config
  *(.rodata)
  *(.rodata*)
  .rodata.SSD_data
-                0x00800087        0xa ./ECAL/SSD.o
+                0x0080007b        0xa ./ECAL/SSD.o
+ .rodata.SSDConfig
+                0x00800085       0x18 ./Config/SSD_cfg.o
+                0x00800085                SSDConfig
  .rodata.DioConfig
-                0x00800091       0x42 ./Config/dio_cfg.o
-                0x00800091                DioConfig
+                0x0080009d       0x54 ./Config/dio_cfg.o
+                0x0080009d                DioConfig
  *(.gnu.linkonce.d*)
-                0x008000d4                . = ALIGN (0x2)
- *fill*         0x008000d3        0x1 00
-                0x008000d4                _edata = .
-                0x008000d4                PROVIDE (__data_end, .)
+                0x008000f2                . = ALIGN (0x2)
+ *fill*         0x008000f1        0x1 00
+                0x008000f2                _edata = .
+                0x008000f2                PROVIDE (__data_end, .)
 
-.bss            0x008000d4       0x58
-                0x008000d4                PROVIDE (__bss_start, .)
+.bss            0x008000f2       0x63
+                0x008000f2                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x008000d4        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm16.o
- .bss           0x008000d4        0x0 ./System/interruptHandler.o
- .bss           0x008000d4        0x0 ./HAL/dio.o
- .bss           0x008000d4        0x0 ./HAL/os.o
- .bss           0x008000d4        0x0 ./HAL/timer0.o
- .bss           0x008000d4        0x0 ./ECAL/PushButton.o
- .bss           0x008000d4        0x0 ./ECAL/SSD.o
- .bss           0x008000d4        0x0 ./Config/PB_cfg.o
- .bss           0x008000d4        0x0 ./Config/SSD_cfg.o
- .bss           0x008000d4        0x0 ./Config/dio_cfg.o
- .bss           0x008000d4        0x0 ./Config/tmr0_cfg.o
- .bss           0x008000d4        0x0 ./APP/counter.o
- .bss           0x008000d4        0x0 ./APP/display.o
- .bss           0x008000d4        0x0 ./main.o
- .bss           0x008000d4        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodhi4.o)
- .bss           0x008000d4        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
- .bss           0x008000d4        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
- .bss           0x008000d4        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x008000f2        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm16.o
+ .bss           0x008000f2        0x0 ./System/interruptHandler.o
+ .bss           0x008000f2        0x0 ./HAL/dio.o
+ .bss           0x008000f2        0x0 ./HAL/os.o
+ .bss           0x008000f2        0x0 ./HAL/timer0.o
+ .bss           0x008000f2        0x0 ./ECAL/PushButton.o
+ .bss           0x008000f2        0x0 ./ECAL/SSD.o
+ .bss           0x008000f2        0x0 ./Config/PB_cfg.o
+ .bss           0x008000f2        0x0 ./Config/SSD_cfg.o
+ .bss           0x008000f2        0x0 ./Config/dio_cfg.o
+ .bss           0x008000f2        0x0 ./Config/tmr0_cfg.o
+ .bss           0x008000f2        0x0 ./APP/counter.o
+ .bss           0x008000f2        0x0 ./APP/display.o
+ .bss           0x008000f2        0x0 ./main.o
+ .bss           0x008000f2        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x008000f2        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .bss           0x008000f2        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .bss           0x008000f2        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
  *(.bss*)
- .bss.OS_flag   0x008000d4        0x1 ./HAL/os.o
-                0x008000d4                OS_flag
+ .bss.OS_flag   0x008000f2        0x1 ./HAL/os.o
+                0x008000f2                OS_flag
  .bss.OS_counter
-                0x008000d5        0x2 ./HAL/os.o
-                0x008000d5                OS_counter
- .bss.PB_update_counter.1506
-                0x008000d7        0x1 ./ECAL/PushButton.o
- .bss.currentSSD.1509
-                0x008000d8        0x1 ./ECAL/SSD.o
- .bss.SSD_update_counter.1508
-                0x008000d9        0x1 ./ECAL/SSD.o
+                0x008000f3        0x1 ./HAL/os.o
+                0x008000f3                OS_counter
+ .bss.PB_update_counter.1509
+                0x008000f4        0x1 ./ECAL/PushButton.o
+ .bss.SSD_update_counter.1512
+                0x008000f5        0x1 ./ECAL/SSD.o
+ .bss.currentSSD.1510
+                0x008000f6        0x1 ./ECAL/SSD.o
  .bss.CNT_counter
-                0x008000da        0x2 ./APP/counter.o
-                0x008000da                CNT_counter
- .bss.CNT_period_counter.1491
-                0x008000dc        0x1 ./APP/counter.o
- .bss.DISP_period_counter.1492
-                0x008000dd        0x1 ./APP/display.o
+                0x008000f7        0x2 ./APP/counter.o
+                0x008000f7                CNT_counter
+ .bss.CNT_period_counter.1494
+                0x008000f9        0x1 ./APP/counter.o
+ .bss.DISP_period_counter.1498
+                0x008000fa        0x1 ./APP/display.o
  *(COMMON)
- COMMON         0x008000de       0x34 ./System/interruptHandler.o
-                0x008000de                ISR_FUNCTIONS
- COMMON         0x00800112        0x2 ./HAL/os.o
-                0x00800112                Tick
- COMMON         0x00800114        0xc ./ECAL/PushButton.o
-                0x00800114                buttons
- COMMON         0x00800120        0xc ./ECAL/SSD.o
-                0x00800120                SSDs
-                0x0080012c                PROVIDE (__bss_end, .)
-                0x000009dc                __data_load_start = LOADADDR (.data)
-                0x00000a50                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x008000fb       0x34 ./System/interruptHandler.o
+                0x008000fb                ISR_FUNCTIONS
+ COMMON         0x0080012f        0x2 ./HAL/os.o
+                0x0080012f                Tick
+ COMMON         0x00800131        0xc ./ECAL/PushButton.o
+                0x00800131                buttons
+ COMMON         0x0080013d       0x18 ./ECAL/SSD.o
+                0x0080013d                SSDs
+                0x00800155                PROVIDE (__bss_end, .)
+                0x00000a32                __data_load_start = LOADADDR (.data)
+                0x00000ac4                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080012c        0x0
-                0x0080012c                PROVIDE (__noinit_start, .)
+.noinit         0x00800155        0x0
+                0x00800155                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x0080012c                PROVIDE (__noinit_end, .)
-                0x0080012c                _end = .
-                0x0080012c                PROVIDE (__heap_start, .)
+                0x00800155                PROVIDE (__noinit_end, .)
+                0x00800155                _end = .
+                0x00800155                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)

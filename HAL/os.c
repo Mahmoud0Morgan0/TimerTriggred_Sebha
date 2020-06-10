@@ -24,7 +24,7 @@
 * Module Variable Definitions
 **********************************************************************/
 volatile uint8 OS_flag =0;
-volatile uint16 OS_counter = 0;
+volatile uint8 OS_counter = 0;
 uint16 Tick ;
 /**********************************************************************
 * Function Prototypes
@@ -45,7 +45,7 @@ void OS_countPeriod(void)
 {
 	
 	OS_counter++;
-	//Dio_ChannelToggle(PORTA_ID,PIN0);
+
 	if(OS_counter==Tick)
 	{
 		OS_counter=0;
@@ -58,11 +58,13 @@ void OS_schedule(void)
 	if(OS_flag==1)
 	{
 		//tasks
-		//Dio_ChannelToggle(PORTA_ID,_PIN0);
+		//Dio_ChannelToggle(PORTA_ID,_PIN4);
+
 		SSD_update();
 		PB_update();
-		CNT_update();
 		DISP_update();
+		CNT_update();
+
 		OS_flag=0;
 		//sleep
 	}

@@ -30,10 +30,11 @@ typedef enum
 /**********************************************************************
 * Function Prototypes
 **********************************************************************/
-SSD_error_t SSD_init(const SSD_Config_t *config);
+SSD_error_t SSD_init(const SSD_Config_t const * config);
 void SSD_update(void);
 SSD_error_t SSD_setState(uint8 SSD_id,SSD_State_t state);
 SSD_error_t SSD_getState(uint8 SSD_id,SSD_State_t *state);
 SSD_error_t SSD_setSymbol(uint8 SSD_id,SSD_symbols_t symbol);
 SSD_error_t SSD_getSymbol(uint8 SSD_id,SSD_symbols_t *symbol);
+SSD_error_t SSD_out(uint8 SSD_id,SSD_symbols_t symbol);
 #endif /* ECAL_SSD_H_ */

@@ -70,7 +70,7 @@ static uint8 SSD_data[SSD_NULL]=
 * @see SSD_update();
 *
 **********************************************************************/
-SSD_error_t SSD_init(const SSD_Config_t *config)
+SSD_error_t SSD_init(const SSD_Config_t *const config)
 {
 	SSD_error_t errorState=SSD_PASS;
 	uint8 i ;
@@ -130,7 +130,8 @@ SSD_error_t SSD_init(const SSD_Config_t *config)
 **********************************************************************/
 void SSD_update(void)
 {
-	uint8 i;
+	static uint8 currentSSD=0;
+	SSD_symbols_t symbol;
 	static uint8 SSD_update_counter =0;
 	SSD_update_counter+=OS_TICK_MS;
 	if(SSD_update_counter<SSD_UPDATE_PERIOD_MS)
@@ -138,20 +139,14 @@ void SSD_update(void)
 		return;
 	}
 	SSD_update_counter=0;
-
-	static uint8 currentSSD=0;
-	/*for(i=0;i<numOfSSD;i++)
-	{
-		SSD_setState(i,SSD_OFF);
-	}*/
-	SSD_setState(0,SSD_OFF);
-	SSD_setState(1,SSD_OFF);
-	SSD_setState(currentSSD,SSD_ON);
+	SSD_getSymbol(currentSSD,&symbol);
+	SSD_out(currentSSD,symbol);
 	currentSSD++;
 	if(currentSSD==numOfSSD)
 	{
 		currentSSD=0;
 	}
+
 }
 /*********************************************************************
 * Function : SSD_setState()
@@ -286,7 +281,7 @@ SSD_error_t SSD_setSymbol(uint8 SSD_id,SSD_symbols_t symbol)
 	{
 		if(symbol<SSD_NULL)
 		{
-			Dio_portWrite(SSDs[SSD_id].port,SSD_data[symbol]);
+			//Dio_portWrite(SSDs[SSD_id].port,SSD_data[symbol]);
 			SSDs[SSD_id].symbol=symbol;
 		}else
 			errorState=INCORRECT_SSD_SYMBOL;
@@ -327,20 +322,64 @@ SSD_error_t SSD_setSymbol(uint8 SSD_id,SSD_symbols_t symbol)
 **********************************************************************/
 SSD_error_t SSD_getSymbol(uint8 SSD_id,SSD_symbols_t *symbol)
 {
-	uint8 data,i;
+
 	SSD_error_t errorState=SSD_PASS;
 	if(SSD_id<numOfSSD)
 	{
-		Dio_portRead(SSDs[SSD_id].port,&data);
-		for(i=0;i<SSD_NULL;i++)
-		{
-			if(data==SSD_data[i])
-			{
-				*symbol=i;
-				break;
-			}
-		}
+		*symbol=SSDs[SSD_id].symbol;
+
 	}else
 		errorState=INCORRECT_SSD_ID;
+	return errorState;
+}
+/*********************************************************************
+* Function : SSD_getSymbol()
+*//**
+* \b Description:
+*
+* This function is used to get symbol of SSD
+*
+* PRE-CONDITION: SSD is initialized  <br>
+* PRE-CONDITION: NUMBER_OF_SSD > 0 <br>
+* PRE-CONDITION: NUMBER_OF_SSD < numOfSSD <br>
+* PRE-CONDITION: The MCU clocks must be configured and enabled.
+*
+* POST-CONDITION:the state of SSD is is returned
+*
+* @param SSD_id is the number of the SSD user want set its symbol
+*
+* @param state the symbol that will be returned from function
+*
+* @return the SSD_error_t State of this function
+*
+* \b Example:
+* @code
+*
+* SSD_getSymbol(1,&symbol);
+* @endcode
+*
+* @see SSD_init();
+* @see SSD_setState();
+* @see SSD_update();
+* @see SSD_setSymbol();
+**********************************************************************/
+SSD_error_t SSD_out(uint8 SSD_id,SSD_symbols_t symbol)
+{
+	uint8 i;
+	SSD_error_t errorState=SSD_PASS;
+	if(SSD_id<numOfSSD)
+	{
+		if(symbol<SSD_NULL)
+		{
+			for(i=0;i<numOfSSD;i++)
+			{
+				SSD_setState(i,SSD_OFF);
+			}
+			Dio_portWrite(SSDs[SSD_id].port,SSD_data[symbol]);
+			SSD_setState(SSD_id,SSD_ON);
+		}else
+			errorState=INCORRECT_SSD_SYMBOL;
+	}else
+			errorState=INCORRECT_SSD_ID;
 	return errorState;
 }

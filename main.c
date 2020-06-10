@@ -13,15 +13,15 @@
 #include "APP/display.h"
 int main()
 {
+	const TMR0Config_t *tmr0Config =Tmr0_ConfigGet();
+	OS_init(tmr0Config,OS_TICK_MS);
 	const DioConfig_t *config = Dio_ConfigGet();
 	Dio_Init(config);
-	const TMR0Config_t *tmr0Config =Tmr0_ConfigGet();
-	OS_init(tmr0Config,5);
 	const PB_data_t *buttonConfig =PB_ConfigGet();
 	PB_init(buttonConfig);
 	const SSD_Config_t *SSD_config=SSD_ConfigGet();
 	SSD_init(SSD_config);
-	CNT_init(5);
+	CNT_init(999);
 	Disp_init();
 	while(1)
 	{

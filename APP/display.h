@@ -17,8 +17,10 @@
 /**********************************************************************
 * Preprocessor Constants
 **********************************************************************/
-#define SSD_units 0
-#define SSD_Hundreds 1
+#define SSD_units 	     3
+#define SSD_tens  		 2
+#define SSD_hundreds 	 1
+#define SSD_thousands  	 0
 
 
 #define DISP_UPDATE_PERIOD_MS 20

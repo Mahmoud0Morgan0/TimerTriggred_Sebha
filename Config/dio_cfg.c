@@ -34,7 +34,7 @@ single pin. Each column is representing a member of the DioConfig_t
 */
 
 
-const DioConfig_t DioConfig[] =
+const DioConfig_t DioConfig[NUMBER_OF_CHANNELS_USED] =
 {
 /*  Port		PIN				Resistor			   		Direction		PINState		Mode*/
 /*																								*/
@@ -43,13 +43,15 @@ const DioConfig_t DioConfig[] =
 { PORTA_ID,		 _PIN1, 		DIO_PULLUP_ENABLED, 		DIO_INPUT, 			DIO_HIGH ,		GPIO },
 { PORTA_ID,		 _PIN2, 		DIO_PULLUP_DISABLED, 		DIO_OUTPUT, 		DIO_HIGH ,		GPIO },
 { PORTA_ID,		 _PIN3, 		DIO_PULLUP_DISABLED, 		DIO_OUTPUT, 		DIO_HIGH ,		GPIO },
+{ PORTA_ID,		 _PIN4, 		DIO_PULLUP_DISABLED, 		DIO_OUTPUT, 		DIO_HIGH ,		GPIO },
+{ PORTA_ID,		 _PIN5, 		DIO_PULLUP_DISABLED, 		DIO_OUTPUT, 		DIO_HIGH ,		GPIO },
 { PORTC_ID,		 _PIN0, 		DIO_PULLUP_DISABLED, 		DIO_OUTPUT, 		DIO_LOW ,		GPIO },
 { PORTC_ID,		 _PIN1, 		DIO_PULLUP_DISABLED, 		DIO_OUTPUT, 		DIO_LOW ,		GPIO },
 { PORTC_ID,		 _PIN2, 		DIO_PULLUP_DISABLED, 		DIO_OUTPUT, 		DIO_LOW ,		GPIO },
 { PORTC_ID,		 _PIN3, 		DIO_PULLUP_DISABLED, 		DIO_OUTPUT, 		DIO_LOW ,		GPIO },
 { PORTC_ID,		 _PIN4, 		DIO_PULLUP_DISABLED, 		DIO_OUTPUT, 		DIO_LOW ,		GPIO },
 { PORTC_ID,		 _PIN5, 		DIO_PULLUP_DISABLED, 		DIO_OUTPUT, 		DIO_LOW ,		GPIO },
-{ PORTC_ID,		 _PIN6, 		DIO_PULLUP_DISABLED, 		DIO_OUTPUT, 		DIO_LOW ,		GPIO },
+{ PORTC_ID,		 _PIN6, 		DIO_PULLUP_DISABLED, 		DIO_OUTPUT, 		DIO_LOW ,		GPIO }
 };
 
 
